@@ -14,7 +14,7 @@ Signer
 3. echo "password" > password.txt 
 4. docker run --rm -it -v $PWD:/gochain -w /gochain thaichain/gochain gochain --datadir /gochain/node --password password.txt account new 
 5. docker run --rm -it -v $PWD:/gochain -w /gochain thaichain/gochain gochain --datadir /gochain/node init genesis.json
-6. docker run -itd --restart=always --name thaichain-node -v $PWD:/gochain -p 40333:40333 thaichain/gochain -w /gochain gochain --networkid 7  --datadir /gochain/node  --cache 4096 --port 40333 --mine --unlock [account from step 4] --password password.txt --extradata [Node name]
+6. docker run -itd --restart=always --name thaichain-node -v $PWD:/gochain -p 40333:40333  -w /gochain thaichain/gochain gochain --networkid 7  --datadir /gochain/node  --cache 4096 --port 40333 --mine --unlock [account from step 4] --password password.txt --extradata [Node name]
 
    =-=-= OR =-=-=
 
