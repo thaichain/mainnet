@@ -6,3 +6,5 @@ docker run --rm -it -v $PWD:/gochain -w /gochain thaichain/gochain gochain --dat
 
 docker-compose up -d
 
+****** admin console *******
+docker run --rm -it -v $PWD:/gochain -w /gochain thaichain/gochain gochain --datadir /gochain/node attach 
