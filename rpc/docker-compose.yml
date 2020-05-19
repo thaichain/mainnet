@@ -4,6 +4,8 @@ services:
     container_name: rpc_node
     image: thaichain/gochain
     ports:
+      # websocket
+      - "7546:8546"    
       # Proxy
       - "7545:8000"
       # Explorer
@@ -11,7 +13,7 @@ services:
       - "30333:30333"
     volumes:
       - .:/gochain
-    command: gochain --networkid 7 --datadir /gochain/node --cache 4096 --port 30333 --rpc
+    command: gochain --networkid 7 --datadir /gochain/node --cache 4096 --port 30333 --rpc --ws --wsaddr 0.0.0.0 --wsorigins '*'
     restart: always
   proxy:
     container_name: proxy
