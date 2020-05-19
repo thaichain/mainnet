@@ -10,7 +10,7 @@ services:
       - "8088:8080"
       - "30333:30333"
     volumes:
-      - ./node:/gochain/node
+      - ./gochain:/gochain/node
     command: gochain --networkid 7 --datadir /gochain/node --cache 4096 --port 30333 --rpc
     restart: always
   proxy:
